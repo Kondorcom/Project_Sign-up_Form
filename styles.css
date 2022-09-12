@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'Norse Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Norse Regular'), url('Norse.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Norse Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Norse Bold'), url('Norsebold.woff') format('woff');
+    }
 * {
     margin: 0;
     padding: 0;
@@ -14,10 +28,15 @@
     font-size: 16px;
     line-height: 1.3;
     display: flex;
-    align-items: center;
+    min-height: 400px;
+    /* align-items: center; */
   }
   .left{
-    max-width: 37%;
+    position: relative;
+    max-width: 34%;
+
+    /* min-width: 34%; */
+    min-width: 250px;
     /* width: 37%; */
     min-height: 400px;
     height: 100%;
@@ -28,11 +47,57 @@
  
   .large_image{
     
-    height: 100%;
-    min-width:inherit;
+    /* height: 100%; */
+    /* min-width:inherit; */
+    
     /* width: 100%; */
     /* object-fit:fill;
      */
      /* overflow: hidden; */
+     object-fit: cover;
+width: 100%;
+/* height: 250px; */
+
+  }
+  .logo{
+    position:absolute;
+    height: 150px;
+    
+    left: 0; top: 25%; right: 0; bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .dark_background{
+    height:100%;
+    width: 100%;
+    background-color: black;
+    opacity: 40%;
+  }
+  .odin_image_text{
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+   .odin_image{
+    /* position: absolute; */
+    height: 80%;
+    
+  }
+  .odin_text{
+    font-family: 'Norse Bold', Norse-Bold, sans-serif;
+    color: #EAEDF0;
+    font-size: 80px;
+  } 
+  .right{
+    width: 70%;
+  }
+
+  .right_text{
+    background-color: lightgrey;
+    /* height: 30%; */
+    height:calc(25% + (150px) );
   }
   
