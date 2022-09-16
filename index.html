@@ -31,20 +31,51 @@
 
     <div class="sign_up_area">
         <p>Let's do this!</p>
-        <div class="form_row">
+<form action="" method="get" class="sign_up_form">
+    
+            <div class="form">
+                <div class="form_row">
+                    <div class="form_label_input">
+                        <label for='name'>FIRST NAME</label>
+                        <input id='name' name='name' type='text' required/>
+                    </div>
+                    <div class="form_label_input">
+                        <label for='surname'>LAST NAME</label>
+                        <input id='surname' name='surname' type='text'/>
+                    </div>
+                </div>
+                <div class="form_row">
+                    <div class="form_label_input">
+                        <label for='email'>EMAIL</label>
+                        <input id='email' name='email' type='email' required/>
+                    </div>
+                    <div class="form_label_input">
+                        <label for='phone'>PHONE NUMBER</label>
+                        <input id='phone' name='phone' type='tel'/>
+                    </div>
+                </div>
+                <div class="form_row">
+                    <div class="form_label_input">
+                        <label for='password'>PASSWORD</label>
+                        <input id='password' name='password' type='password' minlength="3" required onchange="onChange()"/>
+                        <label id="match_password" for="match_password"></label>
+                    </div>
+                    <div class="form_label_input">
+                        <label for='confirm_password'>CONFIRM PASSWORD</label>
+                        <input id='confirm_password' name='confirm_password' type='password' minlength="3" required/ onchange="onChange()">
+                    </div>
+                </div>
+            </div>
+            
 
-        </div>
-        <div class="form_row">
 
-        </div>
-        <div class="form_row">
-
-        </div>
     </div>
     <div class="submit_area">
-        <div class='form-row'>
-            <button type="submit">Create Account</button>
-          </div>
+        
+            <div class='form_row'>
+                <button type="submit">Create Account</button>
+              </div>
+        
           <div class="log_in">
               <div class="log_in_text">Already have an account?</div>
               <div class="log_in_link">
@@ -56,6 +87,26 @@
     </div>
 
 </div>
-    
+</form>
+<script>
+    function onChange(){
+        const password = document.querySelector('input[name=password]');
+        const confirm = document.querySelector('input[name=confirm_password]');
+        const match_password = document.getElementById('match_password');
+        const submit = document.querySelector('button[type="submit"]');
+        if (confirm.value === password.value){
+            match_password.textContent = '';
+            password.style.border='1px solid blue';
+            confirm.style.border='1px solid blue';
+            submit.disabled = false;
+        } else{
+            match_password.style.color = 'red';
+            match_password.textContent = '*Passwords do not match';
+            password.style.border = '1px solid red';
+            confirm.style.border = '1px solid red';
+            submit.disabled = true;
+        }
+    }
+</script> 
 </body>
 </html>
